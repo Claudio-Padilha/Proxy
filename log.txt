@@ -1,0 +1,8 @@
+Proxy Iniciado em: localhost - 8090
+Server Time: 2019-09-26 22:47:05.593838
+------------------------------------------------------
+
+Conexao com ('127.0.0.1', 50470) foi estabelecida!
+Conexao com ('127.0.0.1', 50500) foi estabelecida!
+Conexao com ('127.0.0.1', 50504) foi estabelecida!
+Conexao com ('127.0.0.1', 50508) foi estabelecida!
