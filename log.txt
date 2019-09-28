@@ -1,8 +1,19 @@
-Proxy Iniciado em: localhost - 8090
-Server Time: 2019-09-26 22:47:05.593838
+Proxy Iniciado em: localhost - 9999
+Server Time: 2019-09-27 22:43:01.477116
 ------------------------------------------------------
 
-Conexao com ('127.0.0.1', 50470) foi estabelecida!
-Conexao com ('127.0.0.1', 50500) foi estabelecida!
-Conexao com ('127.0.0.1', 50504) foi estabelecida!
-Conexao com ('127.0.0.1', 50508) foi estabelecida!
+Conexao com ('127.0.0.1', 44282) foi estabelecida!
+Conexao com ('127.0.0.1', 44286) foi estabelecida!
+cnpq.br - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 44288) foi estabelecida!
+cnpq.br - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 44290) foi estabelecida!
+cnpq.br - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 44292) foi estabelecida!
+cnpq.br - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 44294) foi estabelecida!
+cnpq.br - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 44296) foi estabelecida!
+cnpq.br - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 44306) foi estabelecida!
+Conexao com ('127.0.0.1', 44310) foi estabelecida!

@@ -1,10 +1,9 @@
 import time
 
 class BufferData():                         # Objeto valor do dicionario. Precisamos da hora de entrada na cache    
-    def __init__(self, time, data, lock):
+    def __init__(self, time, data):
         self.time = time                    # Hora de entrada na cache
         self.data  = data                   # Dados de resposta
-        self.lock = lock                    # lock para utilização da cache
 
     def getHora(self):
         return self.time
@@ -12,14 +11,15 @@ class BufferData():                         # Objeto valor do dicionario. Precis
     def getData(self):
         return self.data
 
-    def getLock(self):
-        return self.lock
-
 class Cache():
     def __init__ (self, lock):
         self.buffer = {}                            # Dicionario representando a cache. Tem como chave a url e como valor uma instancia da classe bufferData
         self.size = 20000000                        # Capacidade total medida em bytes
         self.currentCapacity = 20000000             # Espaco disponivel atual
+        self.lock = lock
+
+    def getLock(self):
+        return self.lock
 
     def addToCache(self, url, dictData):                  # dicData eh instancia de bufferData
         if (len(dictData.getData()) <= self.currentCapacity):
@@ -50,7 +50,9 @@ class Cache():
         
         while True:
             time.sleep(300)                             # Espera 5 min
-            
+
+            print("Varrendo cache.")
+
             hora = time.localtime()                     # Pega a hora local como int
             hora = time.strftime("%I:%M:%S %p", hora)
             hora = hora.replace(':', '')

@@ -2,45 +2,29 @@ import socket
 import _thread
 import sys
 import datetime
+import time
 from cache import *
 from threading import Lock
-
-LOG = "log.txt"
+from log import *
 
 class ProxyServer():
-   def __init__ (self, porta, blacklist, cache):
+   def __init__ (self, porta, blacklist, cache, log):
       self.porta = porta
       self.blacklist = blacklist
       self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
       self.sock.bind(('', self.porta))
-      self.inicializarLog()
       self.cache = cache
-
-   def inicializarLog(self):
-      self.log = open(LOG, "w")     # w cria ficheiro caso nao exista e sobrescreve caso exista (apaga o conteudo)
-      self.log.write("Proxy Iniciado em: localhost - %d" % self.porta)
-      self.log.write("\n")
-      self.log.write("Server Time: %s" % datetime.datetime.now())
-      self.log.write("\n")
-      self.log.write("------------------------------------------------------")
-      self.log.write("\n")
-      self.log.write("\n")
-      self.log.close()
-
-   def escreverNoLog(self, string):
-      self.log = open(LOG, "a")     # Apende texto no final do arquivo
-      self.log.write(string)
-      self.log.write("\n")
-      self.log.close()
+      self.log = log
+      self.log.inicializarLog()
 
    def escutar(self):
       self.sock.listen(50)
 
-      _thread.start_new_thread(self.cache.varrerCache, (self.cache.getLock()))               # thread para varrer a cache de 5 em 5 minutos
+      _thread.start_new_thread(self.cache.varrerCache, (self.cache.getLock(),))               # thread para varrer a cache de 5 em 5 minutos
 
       while True:
          clientSocket, endereco = self.sock.accept()
-         self.escreverNoLog("Conexao com %s foi estabelecida!" % str(tuple(endereco)))
+         self.log.escreverNoLog("Conexao com %s foi estabelecida!" % str(tuple(endereco)))
 
          _thread.start_new_thread(self.executarProxy, (clientSocket, endereco, self.blacklist))
 
@@ -52,7 +36,7 @@ class ProxyServer():
       request = str(data)
 
       if (request == ""):
-         self.escreverNoLog("Requisicao Invalida! Fechando socket com cliente...")
+         self.log.escreverNoLog("Requisicao Invalida! Fechando socket com cliente...")
          clientSocket.close()
          sys.exit(1)
 
@@ -60,18 +44,21 @@ class ProxyServer():
       first_line = request.split('\n')[0]
       url = first_line.split(' ')[1]
       connectionMethod = first_line.split(' ')[0].replace("b'", "")
+      connectionMethod = connectionMethod.replace("b''","")
 
       if (connectionMethod == "GET" or connectionMethod == "CONNECT"):
          webserver, port = self.getAddress(url)
 
          # Procurar se url esta na blacklist
-         if (webserver in blacklist):
-            self.escreverNoLog("%s - URL não pode ser acessada!" % webserver)
+         if webserver in blacklist:
+            self.log.escreverNoLog("%s - URL não pode ser acessada!" % webserver)
             clientSocket.close()
             sys.exit(1)
-         else if webserver in cache:
-               # TODO
-         # Necessario fazer requisicao ao servidor
+         # Procurar dados na cache
+         elif webserver in self.cache.buffer:
+            self.log.escreverNoLog("%s - Dados sem autoridade (Recebido da cache)!" % webserver)
+            clientSocket.send(self.cache.buffer[webserver].getData())
+         # Necessario buscar no servidor
          else:
             serverSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             serverSock.connect((webserver, port))
@@ -81,17 +68,26 @@ class ProxyServer():
             except socket.error as ex:
                print (ex)
 
+            hora = time.localtime()                     # Pega a hora local como int
+            hora = time.strftime("%I:%M:%S %p", hora)
+            hora = hora.replace(':', '')
+            hora = hora.replace(' AM', '')
+            hora = int(hora.replace(' PM', ''))
+
+            dicData = BufferData(hora, data)
+            self.cache.addToCache(webserver, dicData)
+
             while True:                         # Recebe a resposta em "pedacos" de 8192 bytes
                reply = serverSock.recv(8192)
                if len(reply) > 0:
-                  clientSocket.send(reply)      # Ta enviando "b''"
+                  clientSocket.send(reply)     
                else:
                   break
 
             serverSock.close()
 
       else:
-         self.escreverNoLog("SERVER ERROR - NOT IMPLEMENTED (502): %s" % connectionMethod)
+         self.log.escreverNoLog("SERVER ERROR - NOT IMPLEMENTED (502): %s" % connectionMethod)
          clientSocket.close()
          sys.exit(1)
    
@@ -157,6 +153,8 @@ if __name__ == "__main__":
    lock = Lock()
    cache = Cache(lock)
 
-   proxyServer = ProxyServer(porta, blacklist, cache)
+   LOG = "log.txt"
+   log = Log(LOG, porta)
+   proxyServer = ProxyServer(porta, blacklist, cache, log)
 
    proxyServer.escutar()
