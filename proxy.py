@@ -6,9 +6,10 @@ import time
 from cache import *
 from threading import Lock
 from log import *
+from parser import *
 
 class ProxyServer():
-   def __init__ (self, porta, blacklist, cache, log):
+   def __init__ (self, porta, blacklist, cache, log, parser):
       self.porta = porta
       self.blacklist = blacklist
       self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -16,11 +17,12 @@ class ProxyServer():
       self.cache = cache
       self.log = log
       self.log.inicializarLog()
+      self.parser = parser
 
    def escutar(self):
       self.sock.listen(50)
 
-      _thread.start_new_thread(self.cache.varrerCache, (self.cache.getLock(),))               # thread para varrer a cache de 5 em 5 minutos
+      _thread.start_new_thread(self.cache.varrerCache,())               # thread para varrer a cache de 5 em 5 minutos
 
       while True:
          clientSocket, endereco = self.sock.accept()
@@ -35,19 +37,15 @@ class ProxyServer():
       data = clientSocket.recv(999999)
       request = str(data)
 
-      if (request == ""):
-         self.log.escreverNoLog("Requisicao Invalida! Fechando socket com cliente...")
-         clientSocket.close()
-         sys.exit(1)
+      print(str(request) + "\n\n")
 
-      # Parse request
-      first_line = request.split('\n')[0]
-      url = first_line.split(' ')[1]
-      connectionMethod = first_line.split(' ')[0].replace("b'", "")
-      connectionMethod = connectionMethod.replace("b''","")
+      if (request == "") or (request.find("b''") > -1):
+         self.log.escreverNoLog("Requisicao Invalida! Fechando socket com cliente...")
+
+      url, connectionMethod = self.parser.parseRequest(request)
 
       if (connectionMethod == "GET" or connectionMethod == "CONNECT"):
-         webserver, port = self.getAddress(url)
+         webserver, port = self.parser.getAddress(url)
 
          # Procurar se url esta na blacklist
          if webserver in blacklist:
@@ -75,7 +73,10 @@ class ProxyServer():
             hora = int(hora.replace(' PM', ''))
 
             dicData = BufferData(hora, data)
+
+            self.cache.lock.acquire()
             self.cache.addToCache(webserver, dicData)
+            self.cache.lock.release()
 
             while True:                         # Recebe a resposta em "pedacos" de 8192 bytes
                reply = serverSock.recv(8192)
@@ -88,8 +89,6 @@ class ProxyServer():
 
       else:
          self.log.escreverNoLog("SERVER ERROR - NOT IMPLEMENTED (502): %s" % connectionMethod)
-         clientSocket.close()
-         sys.exit(1)
    
    def getWebserver(self, url):
       # Remover http:// se existir
@@ -105,28 +104,6 @@ class ProxyServer():
          webserverEnd = len(webserver)
 
       return webserver[:webserverEnd]
-
-   def getPort(self, url):
-      portBegin = url.find(":")
-
-      port = -1
-      if (portBegin == -1):
-         port = 80
-      else:
-         temp = url[portBegin + 1:]
-         port = int(temp)
-      
-      return port
-
-   def getAddress(self, url):
-      webserver = self.getWebserver(url)
-      port = self.getPort(webserver)
-
-      portString = ":" + str(port)
-
-      webserver = webserver.replace(portString, "")
-
-      return (webserver, port)     
 
 def atribuirPorta():
    if (len(sys.argv) >= 2):
@@ -153,8 +130,9 @@ if __name__ == "__main__":
    lock = Lock()
    cache = Cache(lock)
 
+   parser = Parser()
    LOG = "log.txt"
    log = Log(LOG, porta)
-   proxyServer = ProxyServer(porta, blacklist, cache, log)
+   proxyServer = ProxyServer(porta, blacklist, cache, log, parser)
 
    proxyServer.escutar()

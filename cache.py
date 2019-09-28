@@ -46,7 +46,7 @@ class Cache():
             self.currentCapacity += len(self.buffer[url].getData())
             del(self.buffer[url])
 
-    def varrerCache(self, lock):
+    def varrerCache(self):
         
         while True:
             time.sleep(300)                             # Espera 5 min
@@ -59,10 +59,10 @@ class Cache():
             hora = hora.replace(' AM', '')
             hora = int(hora.replace(' PM', ''))
             
-            lock.aquire()
+            self.lock.aquire()
 
             for e in self.buffer:
                 if (hora - self.buffer[e].getHora()) > 299:
                     self.removeFromCache(e)
 
-            lock.release()
+            self.lock.release()
