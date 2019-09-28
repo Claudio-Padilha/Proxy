@@ -41,6 +41,7 @@ class ProxyServer():
 
       if (request == "") or (request.find("b''") > -1):
          self.log.escreverNoLog("Requisicao Invalida! Fechando socket com cliente...")
+         sys.exit(1)
 
       url, connectionMethod = self.parser.parseRequest(request)
 
@@ -50,7 +51,6 @@ class ProxyServer():
          # Procurar se url esta na blacklist
          if webserver in blacklist:
             self.log.escreverNoLog("%s - URL não pode ser acessada!" % webserver)
-            clientSocket.close()
             sys.exit(1)
          # Procurar dados na cache
          elif webserver in self.cache.buffer:
@@ -72,19 +72,18 @@ class ProxyServer():
             hora = hora.replace(' AM', '')
             hora = int(hora.replace(' PM', ''))
 
-            dicData = BufferData(hora, data)
-
-            self.cache.lock.acquire()
-            self.cache.addToCache(webserver, dicData)
-            self.cache.lock.release()
-
             while True:                         # Recebe a resposta em "pedacos" de 8192 bytes
                reply = serverSock.recv(8192)
                if len(reply) > 0:
                   clientSocket.send(reply)     
                else:
                   break
+            
+            dicData = BufferData(hora, reply)
 
+            self.cache.lock.acquire()
+            self.cache.addToCache(webserver, dicData)
+            self.cache.lock.release()
             serverSock.close()
 
       else:

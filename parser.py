@@ -1,6 +1,6 @@
 class Parser:    
     def parseRequest (self, request):
-        first_line = request.split('\r')[0]
+        first_line = request.splitlines()[0]
         url = first_line.split(' ')[1]
         connectionMethod = first_line.split(' ')[0].replace("b'", "")
         connectionMethod = connectionMethod.replace("b''","")
