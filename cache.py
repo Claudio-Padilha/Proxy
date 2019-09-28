@@ -59,7 +59,7 @@ class Cache():
             hora = hora.replace(' AM', '')
             hora = int(hora.replace(' PM', ''))
             
-            self.lock.aquire()
+            self.lock.acquire()
 
             for e in self.buffer:
                 if (hora - self.buffer[e].getHora()) > 299:

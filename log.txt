@@ -1,0 +1,171 @@
+Proxy Iniciado em: localhost - 8080
+Server Time: 2019-09-28 17:37:02.514208
+------------------------------------------------------
+
+Conexao com ('127.0.0.1', 32798) foi estabelecida!
+Conexao com ('127.0.0.1', 32802) foi estabelecida!
+Conexao com ('127.0.0.1', 32808) foi estabelecida!
+Conexao com ('127.0.0.1', 32810) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32814) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32816) foi estabelecida!
+Conexao com ('127.0.0.1', 32818) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32820) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32822) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32824) foi estabelecida!
+Conexao com ('127.0.0.1', 32826) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32828) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32830) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32832) foi estabelecida!
+Conexao com ('127.0.0.1', 32834) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32836) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32838) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32840) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32842) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32844) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32846) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32848) foi estabelecida!
+Conexao com ('127.0.0.1', 32850) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32854) foi estabelecida!
+Conexao com ('127.0.0.1', 32862) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32882) foi estabelecida!
+Conexao com ('127.0.0.1', 32886) foi estabelecida!
+Conexao com ('127.0.0.1', 32888) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32892) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32894) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32896) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32898) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32900) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32902) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32904) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32906) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32908) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32910) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32912) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32914) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32916) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32918) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32920) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32922) foi estabelecida!
+safebrowsing.googleapis.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32924) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32926) foi estabelecida!
+Conexao com ('127.0.0.1', 32930) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32932) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32934) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32936) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32938) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32940) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32942) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32944) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32946) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32948) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32950) foi estabelecida!
+Conexao com ('127.0.0.1', 32952) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32954) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32956) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32958) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32960) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32962) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32964) foi estabelecida!
+accounts.firefox.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32966) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32968) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32970) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32972) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32974) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32976) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32978) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32980) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32982) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32984) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32986) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32988) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32990) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32992) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32994) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32996) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 32998) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 33000) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 33002) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 33004) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 33006) foi estabelecida!
+www.google.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 33008) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
+Conexao com ('127.0.0.1', 33010) foi estabelecida!
+Conexao com ('127.0.0.1', 33012) foi estabelecida!
+tiles.services.mozilla.com - Dados sem autoridade (Recebido da cache)!
