@@ -89,21 +89,6 @@ class ProxyServer():
 
       else:
          self.log.escreverNoLog("SERVER ERROR - NOT IMPLEMENTED (502): %s" % connectionMethod)
-   
-   def getWebserver(self, url):
-      # Remover http:// se existir
-      httpPos = url.find("://")
-      if (httpPos == -1):
-         webserver = url
-      else:
-         webserver = url[(httpPos + 3):]
-
-      # Remover caminho do servidor se existir (google.com/fotos)
-      webserverEnd = webserver.find("/")
-      if (webserverEnd == -1):
-         webserverEnd = len(webserver)
-
-      return webserver[:webserverEnd]
 
 def atribuirPorta():
    if (len(sys.argv) >= 2):
