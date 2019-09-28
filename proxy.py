@@ -37,10 +37,8 @@ class ProxyServer():
       data = clientSocket.recv(999999)
       request = str(data)
 
-      print(str(request) + "\n\n")
-
       if (request == "") or (request.find("b''") > -1):
-         self.log.escreverNoLog("Requisicao Invalida! Fechando socket com cliente...")
+         self.log.escreverNoLog("Requisicao Invalida!")
          sys.exit(1)
 
       url, connectionMethod = self.parser.parseRequest(request)
