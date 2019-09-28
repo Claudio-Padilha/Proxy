@@ -34,7 +34,7 @@ class ProxyServer():
 
    def executarProxy(self, clientSocket, endereco, blacklist):
       # Requisicao do servidor
-      data = clientSocket.recv(999999)
+      data = clientSocket.recv(999999) 
       request = str(data)
 
       print(str(request) + "\n\n")
